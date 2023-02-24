@@ -1,0 +1,31 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rasulbek blogi</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header>
+  <h1><a href="{% url 'home' %}">Rasulbek Qadomboyev</a></h1>
+</header>
+{% if user.is_authenticated %}
+    <p>Xush kelibsiz, {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
+{% else %}
+    <a href="{% url 'login' %}">saytga kirish</a> |
+    <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+{% endif %}
+
+
+
+<div>
+  {% block content%}
+  {% endblock content%}
+</div>
+<footer>
+    <h1><a href="{% url 'post_new' %}">Yangi post yaratish</a></h1>
+</footer>
+</body>
+</html>

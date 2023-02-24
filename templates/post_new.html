@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<div class="post-entry">
+ <form method="post" >{%csrf_token %}
+     {{ form.as_p }}
+    <h2>Create POST</h2>
+    <input type="submit" value="Yaratish" >
+    <a href="{%url 'home' %}" >Cancel</a>
+ </form>
+</div>
+
+{% endblock content%}

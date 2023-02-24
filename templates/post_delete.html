@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<div class="post-entry">
+ <form method="post" >{%csrf_token %}
+<!--    <h2>Create POST</h2>-->
+     <h2>Delete Task</h2>
+		<p>Are you sure that you want to delete ?</p>
+    <input type="submit" value="O'chirish" >
+    <h1><a href="{% url 'detail' post.id %}" >Cancel</a></h1>
+ </form>
+</div>
+
+{% endblock content%}
